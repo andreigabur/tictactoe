@@ -2,10 +2,11 @@
 
 import { createSignal } from 'solid-js';
 
-import "./TicTac.css";
+import "./TicTacV2.css";
 import { BoardV2 } from '~/types/types';
 import Check from '~/utils/checkWinner';
 import CheckWinner from '~/utils/checkWinner';
+import { Switch, Button, TextField, Card, CardContent, Divider } from '@suid/material';
 
 function TicTacV2() {
 
@@ -57,7 +58,7 @@ function TicTacV2() {
         setXIsNext(true);
     }
 
-    function handlePronounChange(event: Event & { currentTarget: HTMLInputElement }, player: number) {
+    function handlePronounChange(event: any, player: number) {
         const value = event.currentTarget.value;
         if (value.length > 3) {
             alert('Is cool to be woke, but no more than 3 characters woke!\nOtherwise the pronoun can to be taken as a name :(')
@@ -79,12 +80,12 @@ function TicTacV2() {
             const row = [];
             for (let j = 0; j < size; j++) {
                 row.push(
-                    <button class="square" onClick={() => handleClick(i, j)}>
+                    <Button variant="outlined" onClick={() => handleClick(i, j)}>
                         {(board()[i] && board()[i][j]) ?
                             symbols()[board()[i][j]] :
                             ''
                         }
-                    </button>
+                    </Button>
                 );
             }
             rows.push(<div class="board-row">{row}</div>);
@@ -120,31 +121,47 @@ function TicTacV2() {
                 </div>
 
                 <div class="woke-setting">
-                    <input type="checkbox" id="go-woke" name="go-woke" onChange={(e) => setIsWoke(e.target.checked)} />
+                    <Switch id="go-woke" onChange={(e) => setIsWoke(e.target.checked)} />
                     <label for="go-woke">Let's go woke!</label>
                 </div>
                 {isWoke() &&
                     <div class="woke">
-                        <p>You turned on the self-identification gender mode.<br />
-                            No more X and O, you get to chose your pronouns!</p>
-                        <div class="woke-player">
-                            <label for="1-pronoun">Pronoun for Player 1:</label>
-                            <input
-                                id="1-pronoun"
-                                onChange={e => handlePronounChange(e, 1)}
-                            />
-                        </div>
-                        <div class="woke-player">
-                            <label for="2-pronoun">Pronoun for Player 2:</label>
-                            <input
-                                id="2-pronoun"
-                                onChange={e => handlePronounChange(e, 2)}
-                            />
-                        </div>
+                        <Card variant="outlined">
+                            <CardContent>
+                                <p>You turned on the self-identification gender mode.<br />
+                                    No more X and O, you get to chose your pronouns!</p>
+                                <div class="woke-player">
+                                    {/* <label for="1-pronoun">Pronoun for Player 1:</label> */}
+                                    <TextField
+                                        id="1-pronoun"
+                                        label="Pronoun for Player 1"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="filled"
+                                        onChange={e => handlePronounChange(e, 1)}
+                                    />
+
+                                </div>
+                                <div class="woke-player">
+                                    {/* <label for="2-pronoun">Pronoun for Player 2:</label> */}
+                                    <TextField
+                                        id="2-pronoun"
+                                        label="Pronoun for Player 2"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="filled"
+                                        onChange={e => handlePronounChange(e, 2)}
+                                    />
+                                </div>
+                            </CardContent>
+                        </Card>
                     </div>
                 }
-                <button onClick={handleReset}>Reset</button>
+                <Button variant="contained" onClick={handleReset}>Reset</Button>
             </div>
+            <Divider />
             <div class="game-board">
                 <h3>Game Board</h3>
                 {generateBoard(size())}
@@ -156,6 +173,7 @@ function TicTacV2() {
                         : `Next player: ${xIsNext() ? symbols()[1] : symbols()[2]}`
                     }
                 </p>
+                <Divider />
                 <p>
                     {`It took ${timeToExecute()} ms for the algo to check`}
                 </p>

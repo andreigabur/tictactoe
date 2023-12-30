@@ -1,0 +1,59 @@
+p {
+    margin: 0;
+    padding: 10px;
+}
+
+.game-settings {
+    margin-bottom: 20px;
+}
+
+.game-settings .setting {
+    margin-bottom: 10px;
+}
+
+.game-settings .setting label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.game-settings .setting input {
+    display: inline-block;
+    width: 40px;
+}
+
+.game-settings .woke-setting {
+    margin-bottom: 10px;
+}
+
+.game-settings .woke {
+    margin-bottom: 10px;
+}
+
+.game-settings .woke .MuiPaper-root {
+    max-width: 440px;
+    margin: auto;
+}
+
+.game-settings .woke .woke-player {
+    margin-bottom: 10px;
+}
+
+.game-settings .woke .woke-player label {
+    margin-right: 10px;
+}
+
+.board-row {
+    margin: 0;
+    padding: 0;
+    text-wrap: nowrap;
+}
+
+.board-row button {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
