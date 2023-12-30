@@ -1,0 +1,64 @@
+
+.game-settings .setting {
+    margin-bottom: 10px;
+}
+
+.game-settings .setting label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.game-settings .setting input {
+    display: inline-block;
+    width: 40px;
+}
+
+.game-settings .woke-setting {
+    margin-bottom: 10px;
+}
+
+.game-settings .woke p {
+    margin: 0;
+    padding: 10px;
+}
+
+.game-settings .woke .woke-player {
+    margin-bottom: 10px;
+}
+
+.game-settings .woke .woke-player label {
+    margin-right: 10px;
+}
+
+.game-settings .woke .woke-player input {
+    width: 40px;
+}
+
+.board-row {
+    margin: 0;
+    padding: 0;
+    text-wrap: nowrap;
+}
+
+.board-row button {
+    box-sizing: content-box;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    border: none;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    background: none;
+}
+
+.board-row button:last-child {
+    border-right: none;
+}
+
+.board-row:last-child button{
+    border-bottom: none;
+}

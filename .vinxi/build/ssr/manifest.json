@@ -1,0 +1,48 @@
+{
+  "_index-bcfaff2e.js": {
+    "file": "assets/index-bcfaff2e.js"
+  },
+  "_routes-48694842.js": {
+    "dynamicImports": [
+      "src/routes/[...404].tsx?pick=default&pick=$css",
+      "src/routes/[...404].tsx?pick=default&pick=$css",
+      "src/routes/index.tsx?pick=default&pick=$css",
+      "src/routes/index.tsx?pick=default&pick=$css"
+    ],
+    "file": "assets/routes-48694842.js"
+  },
+  "src/routes/[...404].tsx?pick=default&pick=$css": {
+    "file": "_...404_.js",
+    "imports": [
+      "_index-bcfaff2e.js",
+      "_routes-48694842.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/[...404].tsx?pick=default&pick=$css"
+  },
+  "src/routes/index.css": {
+    "file": "assets/index-0403be90.css",
+    "src": "src/routes/index.css"
+  },
+  "src/routes/index.tsx?pick=default&pick=$css": {
+    "css": [
+      "assets/index-0403be90.css"
+    ],
+    "file": "index.js",
+    "imports": [
+      "_index-bcfaff2e.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/index.tsx?pick=default&pick=$css"
+  },
+  "virtual:#vinxi/handler/ssr": {
+    "file": "ssr.js",
+    "imports": [
+      "_routes-48694842.js"
+    ],
+    "isEntry": true,
+    "src": "virtual:#vinxi/handler/ssr"
+  }
+}
