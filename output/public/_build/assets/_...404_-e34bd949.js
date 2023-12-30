@@ -1,1 +1,0 @@
-import{q as e,h as n,t as r,T as a}from"./index-1d49893b.js";import"./routes-53390ce2.js";function s(t){return null}const u=r("<main><h1>Page Not Found");function p(){return(()=>{const t=u(),o=t.firstChild;return e(t,n(a,{children:"Not Found"}),o),e(t,n(s,{code:404}),o),t})()}export{p as default};
