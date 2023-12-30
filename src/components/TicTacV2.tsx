@@ -58,10 +58,15 @@ function TicTacV2() {
     }
 
     function handlePronounChange(event: Event & { currentTarget: HTMLInputElement }, player: number) {
+        const value = event.currentTarget.value;
+        if (value.length > 3) {
+            alert('Is cool to be woke, but no more than 3 characters woke!\nOtherwise the pronoun can to be taken as a name :(')
+            event.currentTarget.value = '';
+        }
         const newSymbols = symbols();
-        newSymbols[player] = event.currentTarget.value;
+        newSymbols[player] = value;
         if (newSymbols[1] == newSymbols[2]) {
-            alert('You can not have the same pronouns, we need Diversity! Please chose another race to play.');
+            alert('You can not have the same pronouns, we need Diversity!\nPlease chose another race to play.');
             event.currentTarget.value = '';
         } else {
             setSymbols(newSymbols);
